@@ -1,0 +1,74 @@
+<script th:fragment="js" th:inline="javascript" type="text/javascript">
+
+$(document).ready(function(){
+	console.log("DOCUMENT READY!!");
+	
+	init_events();
+	
+});
+
+function memberModifyForm() {
+	console.log('memberModifyForm() CALLED!!');
+	
+	let form = document.member_modify_form;
+	if (form.m_mail.value == '') {
+		alert('INPUT MAIL');
+		form.m_mail.focus();
+		
+	} else if (form.m_phone.value == '') {
+		alert('INPUT PHONE');
+		form.m_phone.focus();
+		
+	} else {
+		form.submit();
+		
+	}
+	
+}
+
+function init_events() {
+	console.log('init_events() CALLED!!');
+	
+	$('#section_wrap .delete_account a').click(function() {
+		console.log('delete_account CLICK HANDLER!!');
+		
+		let result = confirm('정말 탈퇴 하시겠습니까?');
+		if (result)
+			ajax_deleteAccount();
+		
+	});
+	
+}
+
+function ajax_deleteAccount() {
+	console.log('ajax_deleteAccount() CALLED!!');
+	
+	let msg = {
+		'm_no': [[${session.logined_memberVo}]].m_no
+	};
+	$.ajax({
+		url:			'/member/member_delete_confirm',
+		type:			'POST',
+		data: 			JSON.stringify(msg),
+		contentType:	'application/json; chartset=utf-8;',
+		dataType:		'json',
+		success:		function(data) {
+			console.log('AJAX SUCCESS - ajax_deleteAccount()');
+			
+			if (data.result >= 1) {
+				alert('Delete account success!! Bye~');
+				location.href = "/";
+			}
+			
+		},
+		error:			function(data) {
+			console.log('AJAX ERROR - ajax_deleteAccount()');
+			alert('Delete account fail!!');
+			
+		}
+		
+	});
+	
+}
+
+</script>

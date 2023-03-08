@@ -1,0 +1,24 @@
+<header th:fragment="header">
+	<div id="header_wrap" th:if="${session.logined_memberVo == null}">
+		<a th:href="@{/}">처음화면</a>&nbsp;&nbsp;
+		<a th:href="@{/member/create_account_form}">계정 생성</a>&nbsp;&nbsp;
+		<a th:href="@{/member/member_login_form}">로그인</a>&nbsp;&nbsp;
+	</div>
+	<div id="header_wrap" th:unless="${session.logined_memberVo == null}">
+		<a th:href="@{/}">처음화면</a>&nbsp;&nbsp;
+		<a th:href="@{/member/member_modify_form}">정보변경</a>&nbsp;&nbsp;
+		<a th:href="@{/organizer}">일정표</a>&nbsp;&nbsp;
+		<a th:href="@{/board}">게시판</a>&nbsp;&nbsp;
+		<a th:href="@{/member/member_logout_confirm}">로그아웃</a>&nbsp;&nbsp;
+	</div>
+</header>
+
+<nav th:fragment="nav">
+	
+</nav>
+
+<footer th:fragment="footer">
+	<div id="footer_wrap">
+		Copyright ©OFFICE Corp.All Rights Reserved.
+	</div>
+</footer>

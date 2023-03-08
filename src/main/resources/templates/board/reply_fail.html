@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title th:replace="~{/include/title.html::title}"></title>
+
+<link rel="stylesheet" th:href="@{/css/common.css}">
+<link rel="stylesheet" th:href="@{/css/header_nav_footer.css}">
+<link rel="stylesheet" th:href="@{/css/board/write_form.css}">
+
+<script th:replace="~{/include/common_js.html::jquery_cdn}" type="text/javascript"></script>
+<script th:replace="~{/include/board_js.html::js}" type="text/javascript"></script>
+
+</head>
+<body>
+	
+	<header th:replace="~{/include/header_nav_footer.html::header}">
+	</header>
+	
+	<nav th:replace="~{/include/header_nav_footer.html::nav}">
+	</nav>
+	
+	<section>
+		<div id="section_wrap">
+		
+			<div class="word">
+				게시글 답글 실패
+			</div>
+			
+			<div class="board_list">
+				<a th:href="@{/board/list}">리스트로</a>
+			</div>
+			
+		</div>
+	</section>
+	
+	<footer th:replace="~{/include/header_nav_footer.html::footer}">
+	</footer>
+	
+</body>
+</html>

@@ -1,0 +1,87 @@
+<script th:fragment="js" th:inline="javascript" type="text/javascript">
+	
+$(document).ready(function(){
+	console.log('READY!!');
+	
+	
+	
+});
+
+function boardWriteForm() {
+	console.log('boardWriteForm() CALLED!!');
+	
+	let form = document.write_form;
+	if (form.b_title.value == '') {
+		alert('INPUT TITLE!!');
+		form.b_title.focus();
+		
+	} else if (form.b_body.value == '') {
+		alert('INPUT BODY!!');
+		form.b_body.focus();
+		
+	} else {
+		form.submit();	
+		
+	}
+	
+}
+
+function boardWriteCancel() {
+	console.log('boardWriteCancel() CALLED!!');
+	
+	location.href="/board/list";
+	
+}
+
+function boardModifyForm() {
+	console.log('boardModifyForm() CALLED!!');
+	
+	let form = document.modify_form;
+	if (form.b_title.value == '') {
+		alert('INPUT TITLE!!');
+		form.b_title.focus();
+		
+	} else if (form.b_body.value == '') {
+		alert('INPUT BODY!!');
+		form.b_body.focus();
+		
+	} else {
+		form.submit();	
+		
+	}
+	
+}
+
+function boardModifyCancel() {
+	console.log('boardModifyCancel() CALLED!!');
+	
+	history.back();
+	
+}
+
+function boardReplyForm() {
+	console.log('boardReplyForm() CALLED!!');
+	
+	let form = document.reply_form;
+	if (form.b_title.value == '') {
+		alert('INPUT TITLE!!');
+		form.b_title.focus();
+		
+	} else if (form.b_body.value == '') {
+		alert('INPUT BODY!!');
+		form.b_body.focus();
+		
+	} else {
+		form.submit();	
+		
+	}
+	
+}
+
+function boardReplyCancel() {
+	console.log('boardReplyForm() CALLED!!');
+	
+	history.back();
+	
+}
+</script>

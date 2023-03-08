@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title th:replace="~{/include/title.html::title}"></title>
+
+<link rel="stylesheet" th:href="@{/css/common.css}">
+<link rel="stylesheet" th:href="@{/css/header_nav_footer.css}">
+<link rel="stylesheet" th:href="@{/css/create_account_form.css}">
+
+</head>
+<body>
+	
+	<header th:replace="~{/include/header_nav_footer.html::header}">
+	</header>
+	
+	<nav th:replace="~{/include/header_nav_footer.html::nav}">
+	</nav>
+	
+	<section>
+		<div id="section_wrap">
+		
+			<div class="word">
+				로그인에 실패했습니다.
+			</div>
+			
+			<div class="go_login_form">
+				<a th:href="@{/member/member_login_form}">다시 시도해주세요. 로그인</a>
+			</div>
+			
+			<div class="go_create_account_form">
+				<a th:href="@{/member/create_account_form}">계정 생성.</a>
+			</div>
+			
+		</div>
+	</section>
+	
+	<footer th:replace="~{/include/header_nav_footer.html::footer}">
+	</footer>
+	
+</body>
+</html>

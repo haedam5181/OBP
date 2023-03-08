@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title th:replace="~{/include/title.html::title}"></title>
+
+<link rel="stylesheet" th:href="@{/css/common.css}">
+<link rel="stylesheet" th:href="@{/css/header_nav_footer.css}">
+<link rel="stylesheet" th:href="@{/css/home.css}">
+
+</head>
+<body>
+	
+	<header th:replace="~{/include/header_nav_footer.html::header}">
+	</header>
+	
+	<nav th:replace="~{/include/header_nav_footer.html::nav}">
+	</nav>
+	
+	<section>
+		<div id="section_wrap">
+			<div class="word">
+				웹서비스를 이용한 효율적 일정관리!
+			</div>
+			<div class="intro">
+				<img alt="인트로 이미지" th:src="@{/img/intro.jpg}">
+			</div>
+		</div>
+	</section>
+	
+	<footer th:replace="~{/include/header_nav_footer.html::footer}">
+	</footer>
+	
+</body>
+</html>
